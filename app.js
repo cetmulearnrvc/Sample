@@ -18,9 +18,12 @@ else if(req.url === '/exercise-2')
 }
 else if(req.url === '/exercise-2-redirected')
     {
-        res.writeHead(200,{'Content':'text/html'})
-        res.write("<h1>Redirected</h1>");
-        res.end();
+        fs.readFile('Redirection.html', function(err,data)
+    {
+        res.writeHead(200,{'Content-Type':'text/html'})
+        res.write(data)
+        res.end()
+    })
     }
     
     
